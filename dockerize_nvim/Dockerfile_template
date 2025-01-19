@@ -1,15 +1,14 @@
 # 使用 Alpine 的稳定版本作为基础镜像
-# FROM alpine:edge
-FROM continuumio/miniconda3:22.11.1-alpine
+FROM alpine:edge
+# FROM continuumio/miniconda3:22.11.1-alpine
+
+ENV http_proxy=http://10.23.4.71:7890
+ENV https_proxy=http://10.23.4.71:7890
 
 
 # 安装所需的工具并清理缓存以减小镜像大小
-RUN apk add --no-cache cmake sudo git lazygit fzf curl ripgrep alpine-sdk nodejs npm 
+RUN apk add --no-cache cmake sudo git lazygit fzf curl ripgrep alpine-sdk nodejs npm neovim python3 py3-pip
 
-
-COPY neovim/release/bin/* /usr/local/bin
-COPY neovim/release/share/* /usr/local/share
-COPY neovim/release/lib/* /usr/local/lib
 
 # 复制 addusr.sh 脚本到容器中
 COPY addusr.sh /usr/local/bin/addusr.sh
@@ -17,13 +16,19 @@ COPY addusr.sh /usr/local/bin/addusr.sh
 RUN chmod +x /usr/local/bin/addusr.sh && /usr/local/bin/addusr.sh
 
 
+
+# 复制本机的 .config/nvim 目录内容到镜像中（需在构建时提供）
+COPY --chown={USERNAME}:{USERNAME} nvim /home/{USERNAME}/.config/nvim
+RUN chmod -R 777 /home/{USERNAME}/.config
+
+
 # 设置默认用户
 USER {USERNAME}
 
-# 复制本机的 .config/nvim 目录内容到镜像中（需在构建时提供）
-COPY --chown={USERNAME}:{USERNAME} ../nvim /home/{USERNAME}/.config/nvim
+RUN nvim  --headless "+Lazy! sync " +qa
+RUN nvim "+Lazy! install" +MasonToolsInstallSync +q!
 
-RUN nvim --headless "+Lazy! sync " +qa
 
+WORKDIR /home/{USERNAME}
 # 设置默认命令为启动 Neovim
-CMD ["nvim"]
+# CMD ["nvim"]

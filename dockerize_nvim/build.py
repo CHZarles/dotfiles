@@ -43,7 +43,7 @@ def main():
     print(f"Dockerfile has been generated with username: {username}")
 
     # run docker build
-    os.system("docker build -t nvim-ide:latest .")
+    os.system("sudo docker build -t nvim-ide:latest .")
 
 
 if __name__ == "__main__":
