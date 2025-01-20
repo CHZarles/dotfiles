@@ -13,7 +13,7 @@ RUN apk add --no-cache sudo git lazygit fzf curl ripgrep alpine-sdk nodejs npm n
 # 复制 addusr.sh 脚本到容器中
 COPY addusr.sh /usr/local/bin/addusr.sh
 # 运行 addusr.sh 脚本来添加用户
-RUN chmod +x /usr/local/bin/addusr.sh && /usr/local/bin/addusr.sh
+RUN chmod +x /usr/local/bin/addusr.sh && /usr/local/bin/addusr.sh && mkdir /home/{USERNAME}/.config && chmod -R 777 /home/{USERNAME}/.config
 
 
 
@@ -24,7 +24,7 @@ COPY --chown={USERNAME}:{USERNAME} nvim /home/{USERNAME}/.config/nvim
 # 设置默认用户
 USER {USERNAME}
 
-RUN chmod -R 777 /home/{USERNAME}/.config && nvim  --headless "+Lazy! sync " +qa &&  nvim "+Lazy! install" +MasonToolsInstallSync +q!
+RUN  nvim  --headless "+Lazy! sync " +qa &&  nvim "+Lazy! install" +MasonToolsInstallSync +q!
 
 
 WORKDIR /home/{USERNAME}
