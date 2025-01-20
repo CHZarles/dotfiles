@@ -23,12 +23,10 @@ def get_user_info():
     user_uid = subprocess.check_output(["id", "-u"]).decode().strip()
     with open("addusr.sh", "w") as file:
         file.write(f"#!/bin/sh\n")
-        file.write(f"echo '%wheel ALL=(ALL) ALL' > /etc/sudoers.d/wheel\n")
         file.write(f"addgroup -g {user_gid} {user_group}\n")
         file.write(f"adduser -u {user_uid} -G {user_group} -D -s /bin/sh {user}\n")
         file.write(f"echo '{user}:123456' | chpasswd\n")
         # config passwd 123456
-        file.write(f"adduser {user} wheel")
 
 
 def main():
