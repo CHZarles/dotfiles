@@ -19,14 +19,12 @@ RUN chmod +x /usr/local/bin/addusr.sh && /usr/local/bin/addusr.sh
 
 # 复制本机的 .config/nvim 目录内容到镜像中（需在构建时提供）
 COPY --chown={USERNAME}:{USERNAME} nvim /home/{USERNAME}/.config/nvim
-RUN chmod -R 777 /home/{USERNAME}/.config
 
 
 # 设置默认用户
 USER {USERNAME}
 
-RUN nvim  --headless "+Lazy! sync " +qa
-RUN nvim "+Lazy! install" +MasonToolsInstallSync +q!
+RUN chmod -R 777 /home/{USERNAME}/.config && nvim  --headless "+Lazy! sync " +qa &&  nvim "+Lazy! install" +MasonToolsInstallSync +q!
 
 
 WORKDIR /home/{USERNAME}

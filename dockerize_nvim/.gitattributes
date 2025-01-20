@@ -1,2 +1,0 @@
-neovim/commit-71507281 filter=lfs diff=lfs merge=lfs -text
-neovim/release filter=lfs diff=lfs merge=lfs -text
