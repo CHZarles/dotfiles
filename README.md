@@ -2,5 +2,6 @@
 
 ```
 git clone https://github.com/CHZarles/dotfiles.git
-cp nvim ~/.config
+cp -rf nvim ~/.config/nvim
+cp -rf emacs ~/.emacs.d
 ```
