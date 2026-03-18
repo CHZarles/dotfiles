@@ -191,5 +191,7 @@ return {
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
     keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+    keymap.set("n", "<leader>ee", "<CMD>Oil<CR>", { desc = "Open file explorer" })
+    keymap.set("n", "<leader>ef", "<CMD>Oil --float<CR>", { desc = "Open file explorer (float)" })
   end,
 }
