@@ -19,4 +19,7 @@ require("lazy").setup({ { import = "josean.plugins" }, { import = "josean.plugin
   change_detection = {
     notify = false,
   },
+  rocks = {
+    enabled = false,
+  },
 })

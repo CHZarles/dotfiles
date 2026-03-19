@@ -9,6 +9,11 @@ return {
   config = function()
     -- import nvim-treesitter plugin
     local treesitter = require("nvim-treesitter.configs")
+    local treesitter_install = require("nvim-treesitter.install")
+
+    treesitter_install.ts_generate_args = vim.treesitter.language_version
+        and { "generate", "--abi", vim.treesitter.language_version }
+      or { "generate" }
 
     -- configure treesitter
     treesitter.setup({ -- enable syntax highlighting
@@ -33,6 +38,7 @@ return {
         "prisma",
         "markdown",
         "markdown_inline",
+        "latex",
         "svelte",
         "graphql",
         "bash",

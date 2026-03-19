@@ -25,6 +25,7 @@ return {
     })
 
     mason_lspconfig.setup({
+      automatic_enable = false,
       -- list of servers for mason to install
       ensure_installed = {
         -- "tsserver",

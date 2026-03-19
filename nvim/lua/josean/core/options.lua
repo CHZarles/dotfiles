@@ -1,5 +1,10 @@
 vim.cmd("let g:netrw_liststyle = 3")
 
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+
 local opt = vim.opt
 
 opt.relativenumber = true
@@ -34,6 +39,9 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 -- split windows
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
+
+-- sessions
+opt.sessionoptions:append("localoptions")
 
 -- turn off swapfile
 opt.swapfile = false
