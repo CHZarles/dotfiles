@@ -2,19 +2,33 @@ return {
   "OXY2DEV/markview.nvim",
   lazy = false,
   config = function()
+    require("josean.markview_cases").patch()
+
     require("markview").setup({
       preview = {
-        enable = false,
+        enable = true,
         enable_hybrid_mode = false,
-        condition = function(buffer)
-          if not vim.list_contains({ "markdown", "quarto", "rmd", "typst", "asciidoc" }, vim.bo[buffer].filetype) then
-            return nil
-          end
-
-          local ok, parser = pcall(vim.treesitter.get_parser, buffer)
-          return ok and parser ~= nil or false
-        end,
+        max_buf_lines = 5000,
       },
+    })
+
+    local group = vim.api.nvim_create_augroup("josean_markview_attach", { clear = true })
+
+    vim.api.nvim_create_autocmd("FileType", {
+      group = group,
+      pattern = { "markdown", "quarto", "rmd", "typst", "asciidoc" },
+      callback = function(args)
+        if not vim.api.nvim_buf_is_valid(args.buf) then
+          return
+        end
+
+        local commands = require("markview.commands")
+        local state = require("markview.state")
+
+        if not state.buf_attached(args.buf) then
+          commands.attach(args.buf)
+        end
+      end,
     })
   end,
   keys = {

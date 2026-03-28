@@ -1,0 +1,3 @@
+[submodule "claude/plugins/cache/cc-marketplace/safety-net/0.8.2"]
+	path = claude/plugins/cache/cc-marketplace/safety-net/0.8.2
+	url = https://github.com/kenryu42/claude-code-safety-net/tree/v0.8.2

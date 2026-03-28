@@ -2,8 +2,24 @@ vim.cmd("let g:netrw_liststyle = 3")
 
 vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
-vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
+
+local nvim_python_host = vim.fn.expand("~/.venvs/nvim/bin/python3")
+if vim.fn.executable(nvim_python_host) == 1 then
+  vim.g.python3_host_prog = nvim_python_host
+elseif vim.fn.executable("python3") == 1 then
+  vim.g.python3_host_prog = vim.fn.exepath("python3")
+end
+
+local nvim_python_bin = vim.fn.expand("~/.venvs/nvim/bin")
+if vim.fn.isdirectory(nvim_python_bin) == 1 then
+  local path_sep = package.config:sub(1, 1) == "\\" and ";" or ":"
+  local current_path = vim.env.PATH or ""
+
+  if not vim.startswith(current_path, nvim_python_bin .. path_sep) and current_path ~= nvim_python_bin then
+    vim.env.PATH = nvim_python_bin .. path_sep .. current_path
+  end
+end
 
 local opt = vim.opt
 

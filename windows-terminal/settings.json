@@ -1,0 +1,209 @@
+{
+    "$help": "https://aka.ms/terminal-documentation",
+    "$schema": "https://aka.ms/terminal-profiles-schema",
+    "actions": 
+    [
+        {
+            "command": 
+            {
+                "action": "copy",
+                "singleLine": false
+            },
+            "id": "User.copy.644BA8F2"
+        },
+        {
+            "command": "paste",
+            "id": "User.paste"
+        },
+        {
+            "command": 
+            {
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
+            },
+            "id": "User.splitPane.A6751878"
+        },
+        {
+            "command": "find",
+            "id": "User.find"
+        }
+    ],
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{d8e96812-b789-5068-a5ae-10b2fb53e95f}",
+    "keybindings": 
+    [
+        {
+            "id": "User.copy.644BA8F2",
+            "keys": "ctrl+c"
+        },
+        {
+            "id": "User.paste",
+            "keys": "ctrl+v"
+        },
+        {
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        }
+    ],
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
+    "profiles": 
+    {
+        "defaults": {},
+        "list": 
+        [
+            {
+                "commandline": "%SystemRoot%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+                "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+                "hidden": false,
+                "name": "Windows PowerShell"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\cmd.exe",
+                "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+                "hidden": false,
+                "name": "\u547d\u4ee4\u63d0\u793a\u7b26"
+            },
+            {
+                "guid": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
+                "hidden": true,
+                "name": "Ubuntu-22.04",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+                "hidden": false,
+                "name": "Azure Cloud Shell",
+                "source": "Windows.Terminal.Azure"
+            },
+            {
+                "guid": "{4ff56d04-d9cf-57ea-bae2-ad396374e7e3}",
+                "hidden": false,
+                "name": "Ubuntu 22.04.5 LTS",
+                "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
+            },
+            {
+                "commandline": "%WINDIR%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy ByPass -NoExit -Command \"& 'C:\\Users\\Charles\\anaconda3\\shell\\condabin\\conda-hook.ps1' ; conda activate 'C:\\Users\\Charles\\anaconda3' \"",
+                "guid": "{eed49005-877d-5de2-94d5-5ce5e370f8c3}",
+                "icon": "C:\\Users\\Charles\\anaconda3\\Menu\\anaconda_powershell_prompt.ico",
+                "name": "Anaconda PowerShell Prompt (anaconda3)",
+                "startingDirectory": "C:\\Users\\Charles"
+            },
+            {
+                "commandline": "%WINDIR%\\System32\\cmd.exe \"/K\" C:\\Users\\Charles\\anaconda3\\Scripts\\activate.bat C:\\Users\\Charles\\anaconda3",
+                "guid": "{e78b37b4-0017-568b-9279-1abde5e14cde}",
+                "icon": "C:\\Users\\Charles\\anaconda3\\Menu\\anaconda_prompt.ico",
+                "name": "Anaconda Prompt (anaconda3)",
+                "startingDirectory": "C:\\Users\\Charles"
+            },
+            {
+                "guid": "{ef33b290-e2f9-556a-b2db-bb5d27fb9bfe}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{5f22c5bf-bfa5-5384-b6d8-2a58d1501107}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{73ff0ab0-b03d-52b1-8290-f28a6934d98c}",
+                "hidden": true,
+                "name": "Developer Command Prompt for VS 2019",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{d21f0eac-c341-5a65-ab92-6ec170cace46}",
+                "hidden": true,
+                "name": "Developer PowerShell for VS 2019",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{46ca431a-3a87-5fb3-83cd-11ececc031d2}",
+                "hidden": false,
+                "name": "kali-linux",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "commandline": "%WINDIR%\\System32\\WindowsPowerShell\\v1.0\\powershell.exe -ExecutionPolicy ByPass -NoExit -Command \"& 'C:\\Users\\Charles\\miniconda3\\shell\\condabin\\conda-hook.ps1' ; conda activate 'C:\\Users\\Charles\\miniconda3' \"",
+                "guid": "{baef6041-a2f3-5472-b295-a7d7fb0ed62f}",
+                "icon": "C:\\Users\\Charles\\miniconda3\\Menu\\anaconda_powershell_prompt.ico",
+                "name": "Anaconda PowerShell Prompt (miniconda3)",
+                "startingDirectory": "C:\\Users\\Charles"
+            },
+            {
+                "commandline": "%WINDIR%\\System32\\cmd.exe \"/K\" C:\\Users\\Charles\\miniconda3\\Scripts\\activate.bat C:\\Users\\Charles\\miniconda3",
+                "guid": "{35427e1d-45ad-517a-8692-8d5e4093f90f}",
+                "icon": "C:\\Users\\Charles\\miniconda3\\Menu\\anaconda_prompt.ico",
+                "name": "Anaconda Prompt (miniconda3)",
+                "startingDirectory": "C:\\Users\\Charles"
+            },
+            {
+                "commandline": "%SystemRoot%\\System32\\wsl.exe -d Ubuntu-24.04 -u charles --cd ~ -e /bin/bash -l",
+                "colorScheme": "Classic ANSI",
+                "font": 
+                {
+                    "face": "JetBrainsMono NFM"
+                },
+                "guid": "{d8e96812-b789-5068-a5ae-10b2fb53e95f}",
+                "hidden": false,
+                "name": "Ubuntu 24.04.1 LTS",
+                "padding": "0, 0, 0, 0",
+                "scrollbarState": "hidden",
+                "source": "CanonicalGroupLimited.Ubuntu24.04LTS_79rhkp1fndgsc"
+            },
+            {
+                "colorScheme": "Classic ANSI",
+                "font": 
+                {
+                    "face": "JetBrainsMono NFM"
+                },
+                "guid": "{963ff2f7-6aed-5ce3-9d91-90d99571f53a}",
+                "hidden": true,
+                "name": "Ubuntu-24.04",
+                "padding": "0, 0, 0, 0",
+                "scrollbarState": "hidden",
+                "source": "Windows.Terminal.Wsl"
+            }
+        ]
+    },
+    "schemes": 
+    [
+        {
+            "background": "#0C0C0C",
+            "black": "#0C0C0C",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#3B78FF",
+            "brightCyan": "#61D6D6",
+            "brightGreen": "#16C60C",
+            "brightPurple": "#B4009E",
+            "brightRed": "#E74856",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#F9F1A5",
+            "cursorColor": "#F2F2F2",
+            "cyan": "#3A96DD",
+            "foreground": "#F2F2F2",
+            "green": "#13A10E",
+            "name": "Classic ANSI",
+            "purple": "#881798",
+            "red": "#C50F1F",
+            "selectionBackground": "#264F78",
+            "white": "#CCCCCC",
+            "yellow": "#C19C00"
+        }
+    ],
+    "themes": []
+}

@@ -1,0 +1,26 @@
+{
+  "version": 2,
+  "plugins": {
+    "pyright-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/home/charles/.claude/plugins/cache/claude-plugins-official/pyright-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-03-11T02:16:40.652Z",
+        "lastUpdated": "2026-03-11T02:16:40.652Z",
+        "isLocal": true
+      }
+    ],
+    "safety-net@cc-marketplace": [
+      {
+        "scope": "user",
+        "installPath": "/home/charles/.claude/plugins/cache/cc-marketplace/safety-net/0.8.2",
+        "version": "0.8.2",
+        "installedAt": "2026-03-26T13:02:17.017Z",
+        "lastUpdated": "2026-03-26T13:02:17.017Z",
+        "gitCommitSha": "164204d6e1c5599a69f0e724e0c7f7f54aa12a64",
+        "isLocal": false
+      }
+    ]
+  }
+}
